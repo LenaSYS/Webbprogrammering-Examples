@@ -1,0 +1,247 @@
+<html>
+<head>
+  <style>
+      .descbox {
+	font-family: "Arial Narrow", 'Lucida Sans', sans-serif;
+	color: #333;
+	text-align: left;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 16px;
+	line-height: 1.5;
+	word-wrap: break-word;
+	overflow-y: scroll;
+	background-color: #fff;
+	padding:10px;
+}
+
+.descbox pre {
+    font-family: Hack, "Courier 10 Pitch", Courier, monospace;
+    font-size: 12px;
+    line-height: 14px;
+    white-space: pre;
+    white-space: pre-wrap;
+}
+.inline-div{
+    display: inline-block;
+}
+.inline-txtarea{
+    resize: none;
+    border: 10px solid black;
+    height: 125px;
+}
+
+#markdown img{
+		box-shadow: 2px 2px 4px RGBA(0,0,0,0.7);
+		border: 2px solid black;
+        border-radius: 2px;
+        max-width:100%;
+}
+
+.descbox code {
+    font-family: Hack, MyWebFont,Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 10px;
+    line-height: 12px;
+    white-space: pre;
+    white-space: pre-wrap;
+    background: #ffffff;
+    display: block;
+    padding: 1em;
+    margin: 0.5em 0px;
+    border: 1px solid #bebab0;
+    box-shadow: 1px 1px 2px #666;
+}
+
+.descbox strong {
+		font-weight: bold;
+}
+
+.descbox em {
+		font-style: italic;
+}
+
+.descbox ul, .descbox ol {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.descbox ul > li, .descbox ol > li  {
+	font-style: normal;
+	font-weight: normal;
+}
+
+.descbox blockquote {
+	display: inline-block;
+	background: #ffffff;
+	padding: 10px 20px 10px 30px;
+	margin-bottom: 10px;
+	border-left: 10px solid #614875;
+	border-right: 2px solid #614875;
+	-moz-box-shadow: 0px 0px 5px #cccccc;
+	-webkit-box-shadow: 0px 0px 5px #cccccc;
+	box-shadow: 0px 0px 5px #cccccc;
+}
+
+.descbox .imgzoom {
+	border-radius: 2px;
+	margin: 2px 0px 2px 0px;
+}
+
+.descbox .smileyjs {
+	margin-bottom: -2px;
+	width: 20px;
+}
+
+.descbox .smileyphp {
+	margin-top: 4px;
+	margin-bottom: -1px;
+
+	width: 20px;
+}
+
+/* "gifimage", "gifwrapper" and "playbutton" are styles for showing gif clips for tutorials etc. */
+
+.gifimage{
+		width: 150px !important;
+		border: 3px solid teal;
+}
+
+.gifwrapper {
+    position: relative;
+		display: flex;
+		align-items: center;
+}
+
+.playbutton {
+	position: relative;
+	left: -98px;
+  border: 2px solid black;
+  padding:2px;
+  width: 32px !important;
+  height: 32px  !important;
+  border-radius: 32px 32px;
+  pointer-events: none;
+  background-color: rgba(255,255,255,0.5);
+}
+
+.gifimage-fullsize {
+	position: fixed;
+	top:55px;
+	left:20%;
+	width:60% !important;
+	z-index: 10000;
+}
+.console {
+		margin:10px;
+		font-family:Courier;
+		color: #CCCCCC;
+		background: #000000;
+		border: 3px double #CCCCCC;
+		padding: 10px;
+}
+
+/* Styles for markdown-tables */
+.markdown-table {
+	color: #333;
+	width: 100%;
+	max-width: 100%;
+	border: 1px solid #ddd;
+	border-collapse: collapse;
+  	border-spacing: 0;
+  	line-height: 1.42857143;
+}
+.markdown-table thead tr {
+	background: #f9f9f9;
+}
+.markdown-table tbody, .markdown-table thead {
+	vertical-align: middle;
+}
+
+.markdown-table tbody tr:nth-child(even)  {
+	background-color: #f9f9f9;
+}
+.markdown-table thead th {
+	border: 1px solid #ddd;
+	border-top: 0;
+	border-bottom-width: 3px;
+	vertical-align: bottom;
+	padding: 8px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.markdown-table > tbody > tr > td {
+	padding: 8px;
+	line-height: 1.42857143;
+	vertical-align: top;
+	border-top: 1px solid #ddd;
+	border: 1px solid #ddd;
+}
+
+#markdown h4, #markdown h5, #markdown h6 {
+	margin: 0;
+}
+
+#markdown h3{
+    font-size:16px;
+    margin: 2px 0px 2px 0px;
+    border-bottom: 2px solid #aaa;
+}
+
+#markdown hr {
+    height:4px;  
+    padding:0;
+    margin:16px 0;
+    color:#e1e4e8;
+    border:0;
+}
+
+  </style>
+</head>
+<body>
+
+<div id="content"><div id="mdtarget" class="descbox"><div id="markdown"><h1>Make your code more readable</h1>A very important aspect of writing code, any code, is to make the code readable. To do this we follow different conventions or coding standards.<br><br>If you look at <a href="https://en.wikipedia.org/wiki/Indentation_style" target="_blank">https://en.wikipedia.org/wiki/Indentation_style</a> you will find a lot of different indenting styles used. <br><br><h3>For this course we have the following code standard</h3><ul><li>All code should follow <a href="https://en.wikipedia.org/wiki/Indentation_style#K&amp;R_style" target="_blank">K&amp;R</a> with <a href="https://en.wikipedia.org/wiki/Indentation_style#Variant:_mandatory_braces" target="_blank">Mandatory Braces Variant</a></li><li>Indention is done in increments of one (1) tab or two (2) spaces</li><li>Avoid unnecessary blank rows</li><li>Any code that is executed exactly the same number of times should be on the same indentation level, i.e., flow of execution will not disagree with the source-code indentation. This means that insertion of a new line of code anywhere is always safe as long as the braces are correctly placed.<ul><li>Each new code block (denoted by left-hand curly brace '{') must be followed by a newline</li><li>The code contained in each new block (denoted by a left-hand curly brace '{') should be indented 1 level to the right of the containing block.</li><li>At the end of each new block (denoted by a right-hand curly brace '}') we should revert to the previous level of indentation.</li><li>We require mandatory braces for control statements with only a single statement in its scope, ie., bracing every if, else, while, etc., including single-line conditionals</li></ul></li></ul><br>Start of new block must be followed by newline<br><pre><code>// Correct way to add newline
+if(y&gt;7){
+  nextRow();
+}
+
+// Incorrect, no newline added after left-hand curly brace 
+if(y&gt;7){nextRow();}
+</code></pre><br>Start of new block<br><pre><code>// Correct way to indent new block
+if(y&gt;7){
+  nextRow();
+  y++;
+}
+
+// Incorrect way to indent new block. 2 different errors
+//   1. if(y&gt;7) and nextRow() should not be on the same indentation level since they do not exectue the same number of times
+//   2. y++ and nextRow(); should be on the same indentation level since they executes same number of times
+if(y&gt;7){
+nextRow();
+  y++;
+}
+</code></pre><br>End of block<br><pre><code>// Correct way to indent end of block
+if(y&gt;7){
+  nextRow();
+  y++;
+}
+
+// Incorrect way to indent new block.
+//   1. does not revert to the previous level of indentation
+if(y&gt;7){
+  nextRow();
+  y++;
+  }
+</code></pre><br>Mandatory braces for control statements<br><pre><code>// Correct way to add mandatory braces for control statements
+if(y&gt;7){
+  y++;
+}
+
+// Incorrect way, no mandatory braces added for control statements
+if(y&gt;7)
+  y++;
+</code></pre>
+
+</code></pre><br>All submitted code must ad here to these code standards or you will fail on your submissions.</div></div><script>var plorf="# Make your code more readable\nA very important aspect of writing code, any code, is to make the code readable. To do this we follow different conventions or coding standards.\n\nIf you look at !!!https://en.wikipedia.org/wiki/Indentation_style,https://en.wikipedia.org/wiki/Indentation_style!!! you will find a lot of different indenting styles used. \n\n### For this course we have the following code standard\n* All code should follow !!!https://en.wikipedia.org/wiki/Indentation_style#K&R_style,K&R!!! with !!!https://en.wikipedia.org/wiki/Indentation_style#Variant:_mandatory_braces,Mandatory Braces Variant!!!\n* Indention is done in increments of one (1) tab or two (2) spaces\n* Avoid unnecessary blank rows\n* Any code that is executed exactly the same number of times should be on the same indentation level, i.e., flow of execution will not disagree with the source-code indentation. This means that insertion of a new line of code anywhere is always safe as long as the braces are correctly placed.\n  * Each new code block (denoted by left-hand curly brace '{') must be followed by a newline\n  * The code contained in each new block (denoted by a left-hand curly brace '{') should be indented 1 level to the right of the containing block.\n  * At the end of each new block (denoted by a right-hand curly brace '}') we should revert to the previous level of indentation.\n  * We require mandatory braces for control statements with only a single statement in its scope, ie., bracing every if, else, while, etc., including single-line conditionals\n\nStart of new block must be followed by newline\n~~~\n// Correct way to add newline\nif(y>7){\n  nextRow();\n}\n\n// Incorrect, no newline added after left-hand curly brace \nif(y>7){nextRow();}\n~~~\n\nStart of new block\n~~~\n// Correct way to indent new block\nif(y>7){\n  nextRow();\n  y++;\n}\n\n// Incorrect way to indent new block. 2 different errors\n//   1. if(y>7) and nextRow() should not be on the same indentation level since they do not exectue the same number of times\n//   2. y++ and nextRow(); should be on the same indentation level since they executes same number of times\nif(y>7){\nnextRow();\n  y++;\n}\n~~~\n\nEnd of block\n~~~\n// Correct way to indent end of block\nif(y>7){\n  nextRow();\n  y++;\n}\n\n// Incorrect way to indent new block.\n//   1. does not revert to the previous level of indentation\nif(y>7){\n  nextRow();\n  y++;\n  }\n~~~\n\nMandatory braces for control statements\n~~~\n// Correct way to add mandatory braces for control statements\nif(y>7){\n  y++;\n}\n\n// Incorrect way, no mandatory braces added for control statements\nif(y>7)\n  y++;\n~~~\n\n\nA more complete example in C/C++ \n~~~\n// Functions\nint power(int x, int y)\n{\n    int result;\n\n    if (y < 0){\n        result = 0;\n    } else {\n        result = 1;\n        while (y-- > 0){\n            result *= x;\n        }\n    }\n    return result;\n}\n\n// Flow control such as while, for, if\nwhile (x == y) {\n    something();\n    somethingelse();\n}\n~~~\nA more complete example in Javascript\n~~~\n\n~~~\n\nAll submitted code must ad here to these code standards or you will fail on your submissions.";document.getElementById('mdtarget').innerHTML=parseMarkdown(plorf);</script></div>
+</body>
+</html>

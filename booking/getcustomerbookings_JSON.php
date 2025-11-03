@@ -9,7 +9,7 @@
 			$type=getpostAJAX("type");
 
 			if($customerID=="UNK"||$type=="UNK"){
-					err("Missing Form Data: (customerID / type)");					
+					err("Missing Form Data: (customerID ".$customerID." / type ".$type." ".print_r($_POST,true));					
 			}
 
 			try{

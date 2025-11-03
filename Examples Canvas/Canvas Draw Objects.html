@@ -34,21 +34,6 @@ function redraw()
         ctx.scale(obj.size,obj.size);  
         ctx.drawImage(img,-10,-10);
         ctx.restore();
-    }
-
-    window.requestAnimationFrame(redraw);;
-}  
-
-function redraw()
-{
-    ctx.clearRect(0,0,400,400);
-        
-    for(obj of objects){
-        ctx.save();
-        ctx.translate(obj.x,obj.y);
-        ctx.scale(obj.size,obj.size);  
-        ctx.drawImage(img,-10,-10);
-        ctx.restore();
 
         obj.y+=obj.size;
         if(obj.y>400) obj.y=-20;
