@@ -46,7 +46,7 @@
 				}
 				console.log(input);
 
-				fetch('../booking/makecustomer_XML.php', {
+				fetch('../API/booking/makecustomer_XML.php', {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
@@ -89,7 +89,7 @@
 						customerID: encodeURIComponent(customerID)
 				};
 
-				fetch('../booking/getcustomer_XML.php', {
+				fetch('../API/booking/getcustomer_XML.php', {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
@@ -155,7 +155,7 @@
 
 				};
 
-				fetch('../booking/getresources_XML.php', {
+				fetch('../API/booking/getresources_XML.php', {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
@@ -224,7 +224,7 @@
 					type:apptype		// Only show bookings for your webbapplication using the apptype				
 			};
 			
-			fetch("../booking/getavailability_search_XML.php", {
+			fetch("../API/booking/getavailability_search_XML.php", {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
@@ -291,7 +291,7 @@
 						type:apptype		// Only show bookings for your webbapplication using the apptype
 				};	
 			
-				fetch("../booking/getbookings_XML.php", {
+				fetch("../API/booking/getbookings_XML.php", {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
@@ -362,7 +362,7 @@
 						type:apptype		// Only show bookings for your webbapplication using the apptype
 				}
 
-				fetch("../booking/makebooking_XML.php", {
+				fetch("../API/booking/makebooking_XML.php", {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
@@ -402,7 +402,7 @@
 						}
 			console.log(input);
 				
-			fetch("../booking/deletebooking_XML.php", {
+			fetch("../API/booking/deletebooking_XML.php", {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
@@ -440,7 +440,7 @@
 						type:apptype		// Only show bookings for your webbapplication using the apptype
 				}
 
-				fetch("../booking/getcustomerbookings_XML.php", {
+				fetch("../API/booking/getcustomerbookings_XML.php", {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)
