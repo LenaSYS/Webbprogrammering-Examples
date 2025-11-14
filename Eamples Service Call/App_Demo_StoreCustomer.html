@@ -45,7 +45,7 @@
 				}
 				console.log(input);
 
-				fetch('../booking/makecustomer_XML.php', {
+				fetch('../API/booking/makecustomer_XML.php', {
 					  method: 'POST', // or 'PUT'
 					  headers: {'Content-Type': 'application/json'},
 					  body: JSON.stringify(input)

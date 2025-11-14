@@ -28,7 +28,7 @@ function getBookings()
             type: apptype
 		}
 
-		fetch('../booking/getcustomerbookings_JSON.php', {
+		fetch('../API/booking/getcustomerbookings_JSON.php', {
 			  method: 'POST', // or 'PUT'
 			  headers: {'Content-Type': 'application/json'},
 			  body: JSON.stringify(input)
