@@ -14,11 +14,18 @@
     var innerelement=document.getElementById("inner");
     innerelement.style.border="4px dotted blue";
 
-    for(let element of innerelement.childNodes){
+    console.log(innerelement);
+    console.log(innerelement.children);
+    console.log(innerelement.parentElement);
+
+    // Navigate to child nodes
+    for(let element of innerelement.children){
         element.style.border = "2px solid green";
     }
 
+    // Navigate to parent node
     innerelement.parentNode.style.border="8px dashed pink";
+
   }
 </script>
 
