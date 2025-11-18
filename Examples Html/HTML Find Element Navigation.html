@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML Example CSS Iteration</title>
+
+<style>
+    .box{height:120px;margin:8px;background:#def;padding:12px;box-shadow: inset 2px 2px 4px #000;}
+</style>
+
+<script type="text/javascript" >
+  function loaded()
+  {
+    // Find element using ID
+    var innerelement=document.getElementById("inner");
+    innerelement.style.border="4px dotted blue";
+
+    console.log(innerelement);
+    console.log(innerelement.children);
+    console.log(innerelement.parentElement);
+
+/*
+    // Navigate to child nodes
+    for(let element of innerelement.childNodes){
+        element.style.border = "2px solid green";
+    }
+
+    // Navigate to parent node
+    innerelement.parentNode.style.border="8px dashed pink";
+*/
+  }
+</script>
+
+</head>
+<body onload="loaded()">
+
+<div class="box">
+    <div id="inner">
+        <div>Inner Inner Element</div>
+        <div>Inner Inner Element</div>
+        <div>Inner Inner Element</div>
+    </div>
+</div>
+<div class="box">
+    <div>
+        <div>Inner Inner Element</div>
+        <div>Inner Inner Element</div>
+        <div>Inner Inner Element</div>
+    </div>
+</div>
+
+</body>
+</html>

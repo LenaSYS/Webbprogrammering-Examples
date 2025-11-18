@@ -12,14 +12,22 @@
 <script type="text/javascript" >
   function loaded()
   {
-    
+    // Find using ID - fast and works if ids are present and not duplicated
+    document.getElementById("tstE").style.border="4px dotted blue";
+
+    // Find using tag name 
+    var tstelements = document.getElementsByTagName("div");
+    for(let element of tstelements){
+        element.style.border = "4px solid blue";
+    }
+
+    // Find using class name - fast dynamic list - is updated if document changes
     var tstelements = document.getElementsByClassName("tstclass");
     for(let element of tstelements){
         element.style.border = "2px solid green";
     }
 
-    document.getElementById("tstE").style.border="4px dotted blue";
-
+    // Find using css selector - slower and static list is not updated if document changes
     var tstelements = document.querySelectorAll(".dialog span");
     for(let element of tstelements){
         element.style.background = "#9df";
