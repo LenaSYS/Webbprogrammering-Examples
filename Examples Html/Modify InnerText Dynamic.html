@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Form Replace Content</title>
+<script>
+  function clicked()
+  {
+    var divobj = document.getElementById("output1" );  
+    var str=document.getElementById("skriv").value;
+    divobj.innerText=str;
+  }
+
+  function init()
+  {
+    var button1=document.getElementById("button1");
+    button1.addEventListener("click",clicked);
+  }
+</script>
+</head>
+<body onload="init()">
+  <span id="output1">Output Element</span>
+  <input type="text" id="skriv">
+  <button id="button1">Click here</button>
+</body>

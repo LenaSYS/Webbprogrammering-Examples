@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <title>Javascript Form Replace Content</title>
     <script type="text/javascript">
-      function clicked()
-      {
-        var divobj = document.getElementById("output1" );  
-        var str=document.getElementById("skriv").value;
-        divobj.innerText=str;
-      }
+
+    function clicked()
+    {
+      var divobj = document.getElementById("output1" );  
+      var str="<ul><li>"+document.getElementById("skriv").value+"</li></ul>";
+      divobj.innerHTML=str;
+    }
+
     </script>
   </head>
   <body>
