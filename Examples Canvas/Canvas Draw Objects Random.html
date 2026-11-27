@@ -116,15 +116,8 @@ function drawAmoeba(state)
 function drawgraphics()
 {
     ctx.clearRect(0,0,450,450);
-    
-    ctx.beginPath();
-    ctx.moveTo(mx-20,my-20);
-    ctx.lineTo(mx+20,my+20);
-    ctx.moveTo(mx+20,my-20);
-    ctx.lineTo(mx-20,my+20);
-    ctx.stroke();         
-       
-    for(var i=0;i<numflakes;i++){
+           
+    for(var i=0;i<snowflakes.length;i++){
       ctx.save();
       ctx.translate(snowflakes[i].xk,snowflakes[i].yk);
       ctx.scale(0.15,0.15);     
@@ -135,7 +128,8 @@ function drawgraphics()
       snowflakes[i].yk+=snowflakes[i].spd;
       if(snowflakes[i].yk>500) snowflakes[i].yk=-50;
     }
-    setTimeout(function(){drawgraphics()}, 30);
+    
+    window.requestAnimationFrame(drawgraphics);
 }
 
 function startupCanvas()

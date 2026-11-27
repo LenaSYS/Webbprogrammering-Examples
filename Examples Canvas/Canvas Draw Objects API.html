@@ -4,6 +4,9 @@
     <script>
 
 		var apptype="Hotel_Demo";
+    
+    // We start with empty data
+    var appData=[];
 
 		//------------------------------------------------------------------------
 		// fixChars
@@ -64,12 +67,13 @@
 				
 				// An XML DOM document is returned from AJAX
 				var resultset=returnedData.childNodes[0];
-				var output="<table>";
 				// Iterate over all nodes in root node (i.e. resources)
+        appData=[];
 				for (i = 0; i < resultset.childNodes.length; i++) {
 						// Iterate over all child nodes of that node that are resource nodes
 						if(resultset.childNodes.item(i).nodeName=="resource"){
-                alert(resultset.childNodes.item(i));
+                item = JSON.parse(resultset.childNodes.item(i).attributes["auxdata"].nodeValue);
+                appData.push(item);
 						}
 				}
 		}	
@@ -175,31 +179,50 @@ function drawAmoeba(state)
 
 }     
 
+var ang=0;
+
 function drawgraphics()
 {
-    ctx.clearRect(0,0,450,450);    
-       
-    for(var i=0;i<snowflakes.length;i++){
-      ctx.save();
-      ctx.translate(snowflakes[i].xk,snowflakes[i].yk);
-      var scaleang=Math.sin(snowflakes[i].ang);
-      ctx.scale(0.15+(0.1*scaleang),0.15+(0.1*scaleang));     
-      drawAmoeba(1);
-      ctx.restore();
-      
-      // Uppdatera förflyttning
-      snowflakes[i].yk+=snowflakes[i].spd;
-      if(snowflakes[i].yk>500) snowflakes[i].yk=-50;
+    ctx.clearRect(0,0,450,450);
 
-      snowflakes[i].ang+=snowflakes[i].angspd;
+    ang+=0.05;
+
+    // Position in x,y placename in text from auxdata
+    for(var i=0;i<appData.length;i++){
+      ctx.save();
+      ctx.translate(appData[i].x,appData[i].y);
+      ctx.scale(0.2+((Math.sin(ang))*0.03),0.2+((Math.sin(ang)*0.03)));
+      drawAmoeba(1);
+      ctx.font = "84px Arial Narrow";
+      ctx.fillStyle = "#111827";
+      ctx.fillText(appData[i].text, 0, 0);
+      ctx.restore();
     }
-    setTimeout(function(){drawgraphics()}, 30);
+
+    // If we want to draw something from the size instead
+    for(var i=0;i<appData.length;i++){
+      ctx.save();
+      ctx.translate(0,300+(i*40));
+      ctx.font = "20px Arial Narrow";
+      ctx.fillStyle = "#111827";
+      ctx.fillText(appData[i].text, 0, 0);
+      ctx.translate(70,0);
+      ctx.scale(0.1,0.1);
+      for(var j=0;j<appData[i].size;j++){
+          ctx.translate(220,0);
+          drawAmoeba(1);      
+      }
+      ctx.restore();
+    }
+
+
+    window.requestAnimationFrame(drawgraphics);
 }
 
 function startupCanvas()
 {
     // Instantiate data with request to API
-    searchResources()
+    searchResources();
 
     var elem = document.getElementById("myCanvas");
     ctx = elem.getContext('2d');

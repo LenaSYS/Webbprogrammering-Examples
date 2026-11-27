@@ -127,7 +127,7 @@ function drawgraphics()
 
       snowflakes[i].ang+=snowflakes[i].angspd;
     }
-    setTimeout(function(){drawgraphics()}, 30);
+    window.requestAnimationFrame(drawgraphics);
 }
 
 function startupCanvas()
